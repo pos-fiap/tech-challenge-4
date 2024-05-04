@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TechChallenge4.Application.DTOs;
 using TechChallenge4.Application.Interfaces;
 using TechChallenge4.Domain.Entities;
 using TechChallenge4.Domain.Interfaces;
@@ -18,9 +14,10 @@ namespace TechChallenge4.Application.Services
             _genreRepository = genreRepository;
         }
 
-        public async Task Add(Genre genre)
+        public async Task Add(GenreRequestDto genre)
         {
-            await _genreRepository.Add(genre);
+            Genre genreEntity = new(genre.Name, genre.Description);
+            await _genreRepository.Add(genreEntity);
         }
 
         public async Task<IEnumerable<Genre>> GetAll()
@@ -30,7 +27,7 @@ namespace TechChallenge4.Application.Services
 
         public async Task<Genre> GetById(int id)
         {
-            var genre = await _genreRepository.GetById(id);
+            Genre? genre = await _genreRepository.GetById(id);
 
             return genre ?? throw new Exception("Genre not found");
         }

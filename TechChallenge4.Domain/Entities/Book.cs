@@ -8,16 +8,16 @@ namespace TechChallenge4.Domain.Entities
     {
         [Required]
         [MaxLength(100)]
-        public required string Title { get; set; } = title;
+        public string Title { get; set; } = title;
 
         [Required]
         [MaxLength(50)]
-        public required string Author { get; set; } = author;
+        public string Author { get; set; } = author;
 
         [Required]
         [ForeignKey("Genre")]
         public int GenreId { get; set; } = genreId;
 
-        public virtual Genre Genre { get; set; }
+        public virtual Genre? Genre { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using TechChallenge4.Domain.Entities;
+﻿using TechChallenge4.Application.DTOs;
+using TechChallenge4.Domain.Entities;
 
 namespace TechChallenge4.Application.Interfaces
 {
@@ -8,7 +9,7 @@ namespace TechChallenge4.Application.Interfaces
 
         Task<Book> GetById(int id);
 
-        Task Add(Book book);
+        Task Add(BookRequestDto book);
 
         Task Update(Book book);
 

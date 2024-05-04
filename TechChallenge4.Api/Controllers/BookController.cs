@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using TechChallenge4.Application.DTOs;
 using TechChallenge4.Application.Interfaces;
 using TechChallenge4.Domain.Entities;
 
@@ -22,7 +23,7 @@ namespace TechChallenge4.Api.Controllers
             return Ok(books);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
             var book = await _bookService.GetById(id);
@@ -30,7 +31,7 @@ namespace TechChallenge4.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Book book)
+        public async Task<IActionResult> Add(BookRequestDto book)
         {
             await _bookService.Add(book);
             return Created();
@@ -43,14 +44,14 @@ namespace TechChallenge4.Api.Controllers
             return Ok();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public async Task<IActionResult> Remove(int id)
         {
             await _bookService.Remove(id);
             return Ok();
         }
 
-        [HttpGet("genre/{genreId}")]
+        [HttpGet("genre/{genreId:int}")]
         public async Task<IActionResult> GetByGenre(int genreId)
         {
             var books = await _bookService.GetByGenre(genreId);

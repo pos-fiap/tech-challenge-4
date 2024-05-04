@@ -1,4 +1,5 @@
-﻿using TechChallenge4.Application.Interfaces;
+﻿using TechChallenge4.Application.DTOs;
+using TechChallenge4.Application.Interfaces;
 using TechChallenge4.Domain.Entities;
 using TechChallenge4.Domain.Interfaces;
 using TechChallenge4.Infra.IoC;
@@ -14,9 +15,10 @@ namespace TechChallenge4.Application.Services
             _bookRepository = bookRepository;
         }
 
-        public async Task Add(Book book)
+        public async Task Add(BookRequestDto book)
         {
-            await _bookRepository.Add(book);
+            Book bookEntity = new(book.Title, book.Author, book.GenreId);
+            await _bookRepository.Add(bookEntity);
         }
 
         public async Task<IEnumerable<Book>> GetAll()

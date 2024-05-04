@@ -1,4 +1,5 @@
-﻿using TechChallenge4.Domain.Entities;
+﻿using TechChallenge4.Application.DTOs;
+using TechChallenge4.Domain.Entities;
 
 namespace TechChallenge4.Application.Interfaces
 {
@@ -8,7 +9,7 @@ namespace TechChallenge4.Application.Interfaces
 
         Task<Genre> GetById(int id);
 
-        Task Add(Genre genre);
+        Task Add(GenreRequestDto genre);
 
         Task Update(Genre genre);
 
