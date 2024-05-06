@@ -9,7 +9,7 @@ namespace TechChallenge4.Application.Interfaces
 
         Task<Book> GetById(int id);
 
-        Task Add(BookRequestDto book);
+        Task<Book> Add(BookRequestDto book);
 
         Task Update(Book book);
 

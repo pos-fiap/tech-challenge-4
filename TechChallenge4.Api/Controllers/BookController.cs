@@ -33,8 +33,8 @@ namespace TechChallenge4.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(BookRequestDto book)
         {
-            await _bookService.Add(book);
-            return Created();
+            var result = await _bookService.Add(book);
+            return Created(string.Empty, result);
         }
 
         [HttpPut]

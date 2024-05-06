@@ -33,8 +33,8 @@ namespace TechChallenge4.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(GenreRequestDto genre)
         {
-            await _genreService.Add(genre);
-            return Created();
+            var result = await _genreService.Add(genre);
+            return Created(string.Empty, result);
         }
 
         [HttpPut]

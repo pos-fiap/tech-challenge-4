@@ -14,10 +14,11 @@ namespace TechChallenge4.Application.Services
             _genreRepository = genreRepository;
         }
 
-        public async Task Add(GenreRequestDto genre)
+        public async Task<Genre> Add(GenreRequestDto genre)
         {
             Genre genreEntity = new(genre.Name, genre.Description);
             await _genreRepository.Add(genreEntity);
+            return genreEntity;
         }
 
         public async Task<IEnumerable<Genre>> GetAll()

@@ -9,7 +9,7 @@ namespace TechChallenge4.Application.Interfaces
 
         Task<Genre> GetById(int id);
 
-        Task Add(GenreRequestDto genre);
+        Task<Genre> Add(GenreRequestDto genre);
 
         Task Update(Genre genre);
 

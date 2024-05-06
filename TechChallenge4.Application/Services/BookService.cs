@@ -15,10 +15,11 @@ namespace TechChallenge4.Application.Services
             _bookRepository = bookRepository;
         }
 
-        public async Task Add(BookRequestDto book)
+        public async Task<Book> Add(BookRequestDto book)
         {
             Book bookEntity = new(book.Title, book.Author, book.GenreId);
             await _bookRepository.Add(bookEntity);
+            return bookEntity;
         }
 
         public async Task<IEnumerable<Book>> GetAll()
