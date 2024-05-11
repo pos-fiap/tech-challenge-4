@@ -2,7 +2,6 @@
 using TechChallenge4.Application.Interfaces;
 using TechChallenge4.Domain.Entities;
 using TechChallenge4.Domain.Interfaces;
-using TechChallenge4.Infra.IoC;
 
 namespace TechChallenge4.Application.Services
 {

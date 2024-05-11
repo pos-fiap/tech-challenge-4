@@ -5,7 +5,7 @@
     {
         private readonly Mock<IBookRepository> _bookRepository;
 
-        public BookServiceTest() 
+        public BookServiceTest()
         {
             _bookRepository = new Mock<IBookRepository>();
         }
@@ -17,10 +17,10 @@
             // Arrange
             var bookService = new BookService(_bookRepository.Object);
             var bookRequestDto = new BookRequestDto("Book one", "Someone", 1);
-            
+
             // Act
             var result = await bookService.Add(bookRequestDto);
-            
+
             // Assert
             Assert.NotNull(result);
             Assert.Equal(bookRequestDto.Title, result.Title);
@@ -40,10 +40,10 @@
             };
 
             _bookRepository.Setup(x => x.GetAll()).ReturnsAsync(books);
-            
+
             // Act
             var result = await bookService.GetAll();
-            
+
             // Assert
             Assert.NotNull(result);
             Assert.Equal(books.Count, result.Count());
@@ -60,10 +60,10 @@
                 new("Book two", "Someone else", 1)
             };
             _bookRepository.Setup(x => x.GetAll(It.IsAny<Expression<Func<Book, bool>>>())).ReturnsAsync(books);
-            
+
             // Act
             var result = await bookService.GetByGenre(1);
-            
+
             // Assert
             Assert.NotNull(result);
             Assert.Equal(books.Count, result.Count());
@@ -76,10 +76,10 @@
             var bookService = new BookService(_bookRepository.Object);
             var book = new Book("Book one", "Someone", 1);
             _bookRepository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(book);
-            
+
             // Act
             var result = await bookService.GetById(1);
-            
+
             // Assert
             Assert.NotNull(result);
             Assert.Equal(book.Title, result.Title);
@@ -94,10 +94,10 @@
             var bookService = new BookService(_bookRepository.Object);
             var book = new Book("Book one", "Someone", 1);
             _bookRepository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(book);
-            
+
             // Act
             await bookService.Remove(1);
-            
+
             // Assert
             _bookRepository.Verify(x => x.Delete(It.IsAny<Book>()), Times.Once);
         }
@@ -108,10 +108,10 @@
             // Arrange
             var bookService = new BookService(_bookRepository.Object);
             var book = new Book("Book one", "Someone", 1);
-            
+
             // Act
             await bookService.Update(book);
-            
+
             // Assert
             _bookRepository.Verify(x => x.Update(It.IsAny<Book>()), Times.Once);
         }

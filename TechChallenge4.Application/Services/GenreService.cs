@@ -23,7 +23,7 @@ namespace TechChallenge4.Application.Services
 
         public async Task<IEnumerable<Genre>> GetAll()
         {
-           return await _genreRepository.GetAll();
+            return await _genreRepository.GetAll();
         }
 
         public async Task<Genre> GetById(int id)

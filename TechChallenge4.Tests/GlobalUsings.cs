@@ -1,7 +1,12 @@
-global using Xunit;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
 global using Moq;
-global using TechChallenge4.Domain.Interfaces;
 global using System.Linq.Expressions;
+global using TechChallenge4.Api.Controllers;
 global using TechChallenge4.Application.DTOs;
 global using TechChallenge4.Application.Services;
 global using TechChallenge4.Domain.Entities;
+global using TechChallenge4.Domain.Interfaces;
+global using TechChallenge4.Infra.Data.Context;
+global using TechChallenge4.Infra.Data.Repositories;
+global using Xunit;

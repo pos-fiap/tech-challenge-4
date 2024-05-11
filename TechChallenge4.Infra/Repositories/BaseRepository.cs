@@ -45,6 +45,6 @@ namespace TechChallenge4.Infra.Data.Repositories
         }
 
         public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> where) => await _dbSet.Where(where).ToListAsync();
-        
+
     }
 }
