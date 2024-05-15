@@ -1,4 +1,6 @@
-﻿namespace TechChallenge4.Tests.Integration
+﻿using TechChallenge4.Infra.IoC;
+
+namespace TechChallenge4.Tests.Integration
 {
     [Collection("BookIntegration")]
     public class BookControllerIntegrationTest : BaseIntegrationTest
@@ -7,6 +9,7 @@
         private ApplicationContext _applicationContext;
         private BookRepository _bookRepository;
         private BookService _bookService;
+        private GenreRepository _genreRepository;
         private BookController _bookController;
         private Book _book;
         private Genre _genre = new("Genre Seed", "");
@@ -21,7 +24,8 @@
             _dbContextOptions = new DbContextOptionsBuilder<ApplicationContext>().UseSqlServer(ConnectionString).Options;
             _applicationContext = new ApplicationContext(_dbContextOptions);
             _bookRepository = new BookRepository(_applicationContext);
-            _bookService = new BookService(_bookRepository);
+            _genreRepository = new GenreRepository(_applicationContext);
+            _bookService = new BookService(_bookRepository, _genreRepository);
             _bookController = new BookController(_bookService);
         }
 

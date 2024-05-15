@@ -23,7 +23,8 @@ namespace TechChallenge4.Application.Services
 
         public async Task<IEnumerable<Genre>> GetAll()
         {
-            return await _genreRepository.GetAll();
+            IEnumerable<Genre> genres = await _genreRepository.GetAll();
+            return genres.OrderBy(gen => gen.Name);
         }
 
         public async Task<Genre> GetById(int id)
@@ -40,6 +41,7 @@ namespace TechChallenge4.Application.Services
 
         public async Task Update(Genre genre)
         {
+            _ = await GetById(genre.Id);
             await _genreRepository.Update(genre);
         }
     }

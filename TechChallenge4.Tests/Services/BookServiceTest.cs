@@ -4,10 +4,12 @@
     public class BookServiceTest
     {
         private readonly Mock<IBookRepository> _bookRepository;
+        private readonly Mock<IGenreRepository> _genreRepository;
 
         public BookServiceTest()
         {
             _bookRepository = new Mock<IBookRepository>();
+            _genreRepository = new Mock<IGenreRepository>();
         }
 
 
@@ -15,7 +17,8 @@
         public async Task Add_WhenCalled_ReturnsBook()
         {
             // Arrange
-            var bookService = new BookService(_bookRepository.Object);
+            _genreRepository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(new Genre("Genre", "Genre Description"));
+            var bookService = new BookService(_bookRepository.Object, _genreRepository.Object);
             var bookRequestDto = new BookRequestDto("Book one", "Someone", 1);
 
             // Act
@@ -32,7 +35,7 @@
         public async Task GetAll_WhenCalled_ReturnsBooks()
         {
             // Arrange
-            var bookService = new BookService(_bookRepository.Object);
+            var bookService = new BookService(_bookRepository.Object, _genreRepository.Object);
             var books = new List<Book>
             {
                 new("Book one", "Someone", 1),
@@ -53,7 +56,7 @@
         public async Task GetByGenre_WhenCalled_ReturnsBooks()
         {
             // Arrange
-            var bookService = new BookService(_bookRepository.Object);
+            var bookService = new BookService(_bookRepository.Object, _genreRepository.Object);
             var books = new List<Book>
             {
                 new("Book one", "Someone", 1),
@@ -73,7 +76,7 @@
         public async Task GetById_WhenCalled_ReturnsBook()
         {
             // Arrange
-            var bookService = new BookService(_bookRepository.Object);
+            var bookService = new BookService(_bookRepository.Object, _genreRepository.Object);
             var book = new Book("Book one", "Someone", 1);
             _bookRepository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(book);
 
@@ -91,7 +94,7 @@
         public async Task Remove_WhenCalled_ReturnsVoid()
         {
             // Arrange
-            var bookService = new BookService(_bookRepository.Object);
+            var bookService = new BookService(_bookRepository.Object, _genreRepository.Object);
             var book = new Book("Book one", "Someone", 1);
             _bookRepository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(book);
 
@@ -106,8 +109,9 @@
         public async Task Update_WhenCalled_ReturnsVoid()
         {
             // Arrange
-            var bookService = new BookService(_bookRepository.Object);
             var book = new Book("Book one", "Someone", 1);
+            _bookRepository.Setup(x => x.GetById(It.IsAny<int>())).ReturnsAsync(book);
+            var bookService = new BookService(_bookRepository.Object, _genreRepository.Object);
 
             // Act
             await bookService.Update(book);

@@ -1,4 +1,6 @@
-﻿namespace TechChallenge4.Application.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TechChallenge4.Application.DTOs
 {
-    public record BookRequestDto(string Title, string Author, int GenreId);
+    public record BookRequestDto([Required] string Title, [Required] string Author, [Required] int GenreId);
 }

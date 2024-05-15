@@ -7,7 +7,7 @@
 **Critérios de Aceitação:**  
 - Ao fornecer um título, autor e ID de gênero válido e enviar uma solicitação POST para a rota `/api/books`, um novo livro deve ser criado na biblioteca.
 - Se algum campo obrigatório não for enviado na solicitação ou estiver vazio, o sistema deve retornar um status HTTP 400 (Bad Request) com uma mensagem de erro indicando o campo ausente.
-- Se o ID do gênero fornecido não existir no sistema, o sistema deve retornar um status HTTP 404 (Not Found) com uma mensagem de erro informando que o gênero não foi encontrado.
+- Se o ID do gênero fornecido não existir no sistema, o sistema deve retornar uma mensagem de erro informando que o gênero não foi encontrado. 
 
 <br><br>
 
@@ -18,7 +18,6 @@
 **Para** escolher os livros que desejo ler ou obter informações sobre eles  
 
 **Critérios de Aceitação:**  
-- Ao enviar uma solicitação GET para a rota `/api/books`, o sistema deve retornar uma lista paginada contendo todos os livros cadastrados na biblioteca.
 - Cada livro na lista deve exibir o título, autor e nome do gênero.
 - A lista deve ser ordenada alfabeticamente pelo título do livro.
 
@@ -32,8 +31,8 @@
 
 **Critérios de Aceitação:**  
 - Ao enviar uma solicitação PUT para a rota `/api/books/{id}` com os campos de título, autor e ID de gênero preenchidos corretamente, as informações do livro correspondente devem ser atualizadas na biblioteca.
-- Se o livro não existir, o sistema deve retornar um status HTTP 404 (Not Found).
-- Se o ID do gênero fornecido não existir no sistema, o sistema deve retornar um status HTTP 404 (Not Found) com uma mensagem de erro informando que o gênero não foi encontrado.
+- Se o livro não existir, o sistema deve retornar uma mensagem de erro informando que o livro não foi encontrado.
+- Se o ID do gênero fornecido não existir no sistema, o sistema deve retornar uma mensagem de erro informando que o gênero não foi encontrado. 
 
 <br><br>
 
@@ -45,7 +44,7 @@
 
 **Critérios de Aceitação:**  
 - Ao enviar uma solicitação DELETE para a rota `/api/books/{id}`, o livro correspondente deve ser removido da biblioteca.
-- Se o livro não existir, o sistema deve retornar um status HTTP 404 (Not Found).
+- Se o livro não existir, o sistema deve retornar uma mensagem de erro informando que o livro não foi encontrado.
 - Após a exclusão bem-sucedida, o sistema deve retornar um status HTTP 204 (No Content) indicando que a operação foi realizada com sucesso.
 
 <br><br>
@@ -59,4 +58,4 @@
 **Critérios de Aceitação:**  
 - Ao enviar uma solicitação GET para a rota `/api/books/getbygenre/{genreId}`, o sistema deve retornar uma lista de livros que pertencem ao gênero especificado.
 - A lista deve conter apenas os livros que têm o ID de gênero correspondente ao fornecido na solicitação.
-- Se não houver livros para o gênero especificado, o sistema deve retornar um status HTTP 404 (Not Found) com uma mensagem de erro informando que não foram encontrados livros para esse gênero.
+- Se não houver livros para o gênero especificado, o sistema deve retornar uma mensagem de erro informando que não foram encontrados livros para esse gênero.

@@ -6,9 +6,7 @@
 
 **Critérios de Aceitação:**  
 - Quando enviar uma solicitação POST para a rota `/api/genres` com os campos obrigatórios preenchidos corretamente, um novo gênero deve ser criado no sistema.
-- Se algum campo obrigatório não for enviado na solicitação ou estiver vazio, a API deve retornar um status HTTP 400 (Bad Request) com uma mensagem de erro indicando o campo ausente.
-- Se o nome do gênero já existir no sistema, a API deve retornar um status HTTP 409 (Conflict) com uma mensagem de erro informando que o nome já está em uso.
-
+- Se algum campo obrigatório não for enviado na solicitação ou estiver vazio, a API deve retornar uma mensagem de erro indicando o campo ausente.
 
 <br><br>
 
@@ -20,7 +18,7 @@
 **Para** integrar essa informação em diferentes partes do sistema  
 
 **Critérios de Aceitação:**  
-- Quando enviar uma solicitação GET para a rota `/api/genres`, a API deve retornar uma lista paginada contendo todos os gêneros cadastrados no sistema.
+- Quando enviar uma solicitação GET para a rota `/api/genres`, a API deve retornar uma lista contendo todos os gêneros cadastrados no sistema.
 - Cada item da lista deve conter o nome e a descrição do gênero.
 - A lista deve ser ordenada alfabeticamente pelo nome do gênero.
 
@@ -36,8 +34,7 @@
 
 **Critérios de Aceitação:**  
 - Quando enviar uma solicitação PUT para a rota `/api/genres/{id}` com os campos de nome e descrição preenchidos corretamente, as informações do gênero correspondente devem ser atualizadas no sistema.
-- Se o gênero não existir, a API deve retornar um status HTTP 404 (Not Found).
-- Se o nome do gênero já existir para outro gênero, a API deve retornar um status HTTP 409 (Conflict) com uma mensagem de erro informando que o nome já está em uso.
+- Se o gênero não existir, a API deve retornar  uma mensagem de erro informando que o gênero não existe.
 
 
 <br><br>
@@ -51,6 +48,5 @@
 
 **Critérios de Aceitação:**  
 - Quando enviar uma solicitação DELETE para a rota `/api/genres/{id}`, o gênero correspondente deve ser removido do sistema.
-- Se o gênero não existir, a API deve retornar um status HTTP 404 (Not Found).
 
 

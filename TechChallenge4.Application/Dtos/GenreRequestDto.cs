@@ -1,4 +1,6 @@
-﻿namespace TechChallenge4.Application.DTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace TechChallenge4.Application.DTOs
 {
-    public record GenreRequestDto(string Name, string Description);
+    public record GenreRequestDto([Required] string Name, string Description);
 }
