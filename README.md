@@ -1,6 +1,6 @@
 # Cadastro de Livros
 
-A API foi desenvolvida para realização de cadastro de novos livros, contendo título, autor, ano de publicação e gênero, permitindo assim que seja sempre realizada a atualização e deleção dessas informações. 
+A API foi desenvolvida para realização de cadastro de novos livros, contendo título, autor e gênero, permitindo assim que seja sempre realizada a atualização e deleção dessas informações. 
  
 # Tecnologias Utilizadas
 
