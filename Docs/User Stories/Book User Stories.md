@@ -56,6 +56,6 @@
 **Para** encontrar livros que se encaixem em minhas preferências de leitura  
 
 **Critérios de Aceitação:**  
-- Ao enviar uma solicitação GET para a rota `/api/book/getbygenre/{genreId}`, o sistema deve retornar uma lista de livros que pertencem ao gênero especificado.
+- Ao enviar uma solicitação GET para a rota `/api/book/genre/{genreId}`, o sistema deve retornar uma lista de livros que pertencem ao gênero especificado.
 - A lista deve conter apenas os livros que têm o ID de gênero correspondente ao fornecido na solicitação.
 - Se não houver livros para o gênero especificado, o sistema deve retornar uma mensagem de erro informando que não foram encontrados livros para esse gênero.
