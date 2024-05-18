@@ -1,61 +1,61 @@
-### Estória 1: Criar Livro
+### EstÃ³ria 1: Criar Livro
 
-**Como** um usuário do sistema  
-**Quero** ser capaz de adicionar um novo livro à biblioteca  
-**Para** registrar novas obras e torná-las disponíveis para os usuários  
+**Como** um usuÃ¡rio do sistema  
+**Quero** ser capaz de adicionar um novo livro Ã  biblioteca  
+**Para** registrar novas obras e tornÃ¡-las disponÃ­veis para os usuÃ¡rios  
 
-**Critérios de Aceitação:**  
-- Ao fornecer um título, autor e ID de gênero válido e enviar uma solicitação POST para a rota `/api/books`, um novo livro deve ser criado na biblioteca.
-- Se algum campo obrigatório não for enviado na solicitação ou estiver vazio, o sistema deve retornar um status HTTP 400 (Bad Request) com uma mensagem de erro indicando o campo ausente.
-- Se o ID do gênero fornecido não existir no sistema, o sistema deve retornar uma mensagem de erro informando que o gênero não foi encontrado. 
-
-<br><br>
-
-### Estória 2: Listar Livros
-
-**Como** um usuário do sistema  
-**Quero** ser capaz de visualizar uma lista de todos os livros disponíveis  
-**Para** escolher os livros que desejo ler ou obter informações sobre eles  
-
-**Critérios de Aceitação:**  
-- Cada livro na lista deve exibir o título, autor e nome do gênero.
-- A lista deve ser ordenada alfabeticamente pelo título do livro.
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Ao fornecer um tÃ­tulo, autor e ID de gÃªnero vÃ¡lido e enviar uma solicitaÃ§Ã£o POST para a rota `/api/book`, um novo livro deve ser criado na biblioteca.
+- Se algum campo obrigatÃ³rio nÃ£o for enviado na solicitaÃ§Ã£o ou estiver vazio, o sistema deve retornar um status HTTP 400 (Bad Request) com uma mensagem de erro indicando o campo ausente.
+- Se o ID do gÃªnero fornecido nÃ£o existir no sistema, o sistema deve retornar uma mensagem de erro informando que o gÃªnero nÃ£o foi encontrado. 
 
 <br><br>
 
-### Estória 3: Atualizar Livro
+### EstÃ³ria 2: Listar Livros
 
-**Como** um usuário do sistema  
-**Quero** ser capaz de atualizar as informações de um livro existente  
-**Para** corrigir erros nos detalhes do livro ou atualizá-los conforme necessário  
+**Como** um usuÃ¡rio do sistema  
+**Quero** ser capaz de visualizar uma lista de todos os livros disponÃ­veis  
+**Para** escolher os livros que desejo ler ou obter informaÃ§Ãµes sobre eles  
 
-**Critérios de Aceitação:**  
-- Ao enviar uma solicitação PUT para a rota `/api/books/{id}` com os campos de título, autor e ID de gênero preenchidos corretamente, as informações do livro correspondente devem ser atualizadas na biblioteca.
-- Se o livro não existir, o sistema deve retornar uma mensagem de erro informando que o livro não foi encontrado.
-- Se o ID do gênero fornecido não existir no sistema, o sistema deve retornar uma mensagem de erro informando que o gênero não foi encontrado. 
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Cada livro na lista deve exibir o tÃ­tulo, autor e nome do gÃªnero.
+- A lista deve ser ordenada alfabeticamente pelo tÃ­tulo do livro.
 
 <br><br>
 
-### Estória 4: Excluir Livro
+### EstÃ³ria 3: Atualizar Livro
 
-**Como** um usuário do sistema  
+**Como** um usuÃ¡rio do sistema  
+**Quero** ser capaz de atualizar as informaÃ§Ãµes de um livro existente  
+**Para** corrigir erros nos detalhes do livro ou atualizÃ¡-los conforme necessÃ¡rio  
+
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Ao enviar uma solicitaÃ§Ã£o PUT para a rota `/api/book/{id}` com os campos de tÃ­tulo, autor e ID de gÃªnero preenchidos corretamente, as informaÃ§Ãµes do livro correspondente devem ser atualizadas na biblioteca.
+- Se o livro nÃ£o existir, o sistema deve retornar uma mensagem de erro informando que o livro nÃ£o foi encontrado.
+- Se o ID do gÃªnero fornecido nÃ£o existir no sistema, o sistema deve retornar uma mensagem de erro informando que o gÃªnero nÃ£o foi encontrado. 
+
+<br><br>
+
+### EstÃ³ria 4: Excluir Livro
+
+**Como** um usuÃ¡rio do sistema  
 **Quero** ser capaz de excluir um livro existente da biblioteca  
-**Para** remover livros que não são mais relevantes ou estão incorretos  
+**Para** remover livros que nÃ£o sÃ£o mais relevantes ou estÃ£o incorretos  
 
-**Critérios de Aceitação:**  
-- Ao enviar uma solicitação DELETE para a rota `/api/books/{id}`, o livro correspondente deve ser removido da biblioteca.
-- Se o livro não existir, o sistema deve retornar uma mensagem de erro informando que o livro não foi encontrado.
-- Após a exclusão bem-sucedida, o sistema deve retornar um status HTTP 204 (No Content) indicando que a operação foi realizada com sucesso.
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Ao enviar uma solicitaÃ§Ã£o DELETE para a rota `/api/book/{id}`, o livro correspondente deve ser removido da biblioteca.
+- Se o livro nÃ£o existir, o sistema deve retornar uma mensagem de erro informando que o livro nÃ£o foi encontrado.
+- ApÃ³s a exclusÃ£o bem-sucedida, o sistema deve retornar um status HTTP 204 (No Content) indicando que a operaÃ§Ã£o foi realizada com sucesso.
 
 <br><br>
 
-### Estória 5: Obter Livros por Gênero
+### EstÃ³ria 5: Obter Livros por GÃªnero
 
-**Como** um usuário do sistema  
-**Quero** ser capaz de obter uma lista de livros de um gênero específico  
-**Para** encontrar livros que se encaixem em minhas preferências de leitura  
+**Como** um usuÃ¡rio do sistema  
+**Quero** ser capaz de obter uma lista de livros de um gÃªnero especÃ­fico  
+**Para** encontrar livros que se encaixem em minhas preferÃªncias de leitura  
 
-**Critérios de Aceitação:**  
-- Ao enviar uma solicitação GET para a rota `/api/books/getbygenre/{genreId}`, o sistema deve retornar uma lista de livros que pertencem ao gênero especificado.
-- A lista deve conter apenas os livros que têm o ID de gênero correspondente ao fornecido na solicitação.
-- Se não houver livros para o gênero especificado, o sistema deve retornar uma mensagem de erro informando que não foram encontrados livros para esse gênero.
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Ao enviar uma solicitaÃ§Ã£o GET para a rota `/api/book/getbygenre/{genreId}`, o sistema deve retornar uma lista de livros que pertencem ao gÃªnero especificado.
+- A lista deve conter apenas os livros que tÃªm o ID de gÃªnero correspondente ao fornecido na solicitaÃ§Ã£o.
+- Se nÃ£o houver livros para o gÃªnero especificado, o sistema deve retornar uma mensagem de erro informando que nÃ£o foram encontrados livros para esse gÃªnero.
