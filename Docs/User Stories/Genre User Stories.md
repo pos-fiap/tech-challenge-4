@@ -1,52 +1,52 @@
-### Estória 1: Criar Gênero
+### EstÃ³ria 1: Criar GÃªnero
 
 **Como** um desenvolvedor consumindo a API  
-**Quero** ser capaz de criar um novo gênero  
-**Para** adicionar novas categorias de conteúdo no sistema  
+**Quero** ser capaz de criar um novo gÃªnero  
+**Para** adicionar novas categorias de conteÃºdo no sistema  
 
-**Critérios de Aceitação:**  
-- Quando enviar uma solicitação POST para a rota `/api/genres` com os campos obrigatórios preenchidos corretamente, um novo gênero deve ser criado no sistema.
-- Se algum campo obrigatório não for enviado na solicitação ou estiver vazio, a API deve retornar uma mensagem de erro indicando o campo ausente.
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Quando enviar uma solicitaÃ§Ã£o POST para a rota `/api/genre` com os campos obrigatÃ³rios preenchidos corretamente, um novo gÃªnero deve ser criado no sistema.
+- Se algum campo obrigatÃ³rio nÃ£o for enviado na solicitaÃ§Ã£o ou estiver vazio, a API deve retornar uma mensagem de erro indicando o campo ausente.
 
 <br><br>
 
 
-### Estória 2: Listar Gêneros
+### EstÃ³ria 2: Listar GÃªneros
 
 **Como** um desenvolvedor consumindo a API  
-**Quero** ser capaz de obter uma lista de todos os gêneros disponíveis  
-**Para** integrar essa informação em diferentes partes do sistema  
+**Quero** ser capaz de obter uma lista de todos os gÃªneros disponÃ­veis  
+**Para** integrar essa informaÃ§Ã£o em diferentes partes do sistema  
 
-**Critérios de Aceitação:**  
-- Quando enviar uma solicitação GET para a rota `/api/genres`, a API deve retornar uma lista contendo todos os gêneros cadastrados no sistema.
-- Cada item da lista deve conter o nome e a descrição do gênero.
-- A lista deve ser ordenada alfabeticamente pelo nome do gênero.
-
-
-<br><br>
-
-
-### Estória 3: Atualizar Gênero
-
-**Como** um desenvolvedor consumindo a API  
-**Quero** ser capaz de atualizar as informações de um gênero existente  
-**Para** corrigir erros ou atualizar detalhes conforme necessário  
-
-**Critérios de Aceitação:**  
-- Quando enviar uma solicitação PUT para a rota `/api/genres/{id}` com os campos de nome e descrição preenchidos corretamente, as informações do gênero correspondente devem ser atualizadas no sistema.
-- Se o gênero não existir, a API deve retornar  uma mensagem de erro informando que o gênero não existe.
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Quando enviar uma solicitaÃ§Ã£o GET para a rota `/api/genre`, a API deve retornar uma lista contendo todos os gÃªneros cadastrados no sistema.
+- Cada item da lista deve conter o nome e a descriÃ§Ã£o do gÃªnero.
+- A lista deve ser ordenada alfabeticamente pelo nome do gÃªnero.
 
 
 <br><br>
 
 
-### Estória 4: Excluir Gênero
+### EstÃ³ria 3: Atualizar GÃªnero
 
 **Como** um desenvolvedor consumindo a API  
-**Quero** ser capaz de excluir um gênero existente  
-**Para** remover categorias de conteúdo obsoletas do sistema  
+**Quero** ser capaz de atualizar as informaÃ§Ãµes de um gÃªnero existente  
+**Para** corrigir erros ou atualizar detalhes conforme necessÃ¡rio  
 
-**Critérios de Aceitação:**  
-- Quando enviar uma solicitação DELETE para a rota `/api/genres/{id}`, o gênero correspondente deve ser removido do sistema.
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Quando enviar uma solicitaÃ§Ã£o PUT para a rota `/api/genre/{id}` com os campos de nome e descriÃ§Ã£o preenchidos corretamente, as informaÃ§Ãµes do gÃªnero correspondente devem ser atualizadas no sistema.
+- Se o gÃªnero nÃ£o existir, a API deve retornar  uma mensagem de erro informando que o gÃªnero nÃ£o existe.
+
+
+<br><br>
+
+
+### EstÃ³ria 4: Excluir GÃªnero
+
+**Como** um desenvolvedor consumindo a API  
+**Quero** ser capaz de excluir um gÃªnero existente  
+**Para** remover categorias de conteÃºdo obsoletas do sistema  
+
+**CritÃ©rios de AceitaÃ§Ã£o:**  
+- Quando enviar uma solicitaÃ§Ã£o DELETE para a rota `/api/genre/{id}`, o gÃªnero correspondente deve ser removido do sistema.
 
 
