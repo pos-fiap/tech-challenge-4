@@ -17,9 +17,7 @@
 ## Requisito Não Funcional
 
 ### 1. A aplicação deve ser segura.
-- O sistema deve proteger os dados do usuário e do livro.
 - O sistema deve ter medidas para prevenir ataques comuns, como injeção de SQL.
-- O sistema deve usar criptografia para proteger dados sensíveis.
 ### 2. A aplicação deve ter um bom desempenho.
 - O sistema deve responder rapidamente às ações do usuário.
 - O sistema deve ser capaz de lidar com um grande número de livros e gêneros.
